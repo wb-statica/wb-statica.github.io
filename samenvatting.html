@@ -3,644 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>MathJax example</title>
+  <title>Samenvatting</title>
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
   </script>
 </head>
 <body>
-\documentclass{article}
-
-\usepackage[dutch]{babel}
-\usepackage{datetime2}
-\usepackage{hyperref}
-\usepackage[a4paper]{geometry}
-\setlength{\parindent}{0pt}
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage[allcommands]{overarrows}
-\usepackage{bm}
-
-\renewcommand{\v}[1]{\overrightharpoonup{\bm{#1}}}
-\renewcommand{\u}[1]{\hat{\bm{#1}}}
-\newcommand{\F}{\v{F}}
-\newcommand{\M}{\v{M}}
-\renewcommand{\r}{\v{r}}
-\renewcommand{\i}{\hat{\bm{\imath}}}
-\renewcommand{\j}{\hat{\bm{\jmath}}}
-\renewcommand{\k}{\u{k}}
-
-\title{Samenvatting Statica}
-\author{Domas Syaifoel}
-\date{Versie \DTMnow \\ Deze tekst valt onder de CC BY-NC 4.0 licentie\footnote{\url{http://creativecommons.org/licenses/by-nc/4.0/}}}
-
-\begin{document}
-
-\maketitle
-
-
-\section{Statica in een notendop}
-
-De derde wet van Newton is:
-$$\sum\F = m\v{a}$$
-Daarnaast is er een draai-equivalent van de derde wet van Newton\footnote{Dit krijg je bij Dynamica}:
-$$\sum\M_G = I_G\v{\alpha}$$
+<h1>Statica in een notendop</h1></p><p>De derde wet van Newton is:
+$$ = m$$
+Daarnaast is er een draai-equivalent van de derde wet van Newton:
+$$_G = I_G$$
 De som van momenten berekenen we als volgt:
-$$\sum\M_G = \sum_i \r_{Gi}\times \F_i + \sum_j \M_{ext, j}$$
-Het vak Statica behandelt de situaties waar er geen versnelling is\footnote{Dus niet alleen situaties waar er geen snelheid is. Sterker nog, Statica kan eigenlijk ook gebruikt worden als er een constante versnelling is, want dat kan je behandelen als een soort extra zwaartekracht.}:
-$$\sum\F = \v{0}$$
-$$\sum_i \r_{Gi}\times \F_i + \sum_j \M_{ext, j}= \v{0}$$
+$$_G = _i _{Gi} _i + _j _{ext, j}$$
+Het vak Statica behandelt de situaties waar er geen versnelling is:
+$$ = $$
+$$_i _{Gi} _i + _j _{ext, j}= $$
 Alternatievelijk geldt voor evenwicht:
-\begin{enumerate}
-    \item Virtuele arbeid is nul. 
-    $$dU = \sum_i d\v{r}_i\cdot\F_i = 0$$
-    \item De afgeleide van de potenti\"ele energie is nul.
-    $$\frac{d}{dq}V = \frac{d}{dq}\left(\sum_i m_igh_i(q) + \sum_j\frac{1}{2}k_js_j^2(q)\right)=0$$
-\end{enumerate}
-
-Wat betekent dit allemaal? Wat zijn die pijltjes en dikgedrukte letters? Wat is een moment? Wat is het verschil tussen vermenigvuldigen met een puntje en vermenigvuldigen met een kruisje? Wat is virtuele arbeid? Wat zijn die grote E's met letters eronder?
-
-Dat staat allemaal in de rest van dit document (en leggen we je graag verder uit tijdens de hoor- en werkcolleges).
-\tableofcontents
-
-
-\newpage
-\section{Leerdoelen}
+<ol>
+    <li>Virtuele arbeid is nul. 
+    $$dU = _i d_i_i = 0$$
+    <li>De afgeleide van de potenti\"ele energie is nul.
+    $${dq}V = {dq}(_i m_igh_i(q) + _j{2}k_js_j^2(q))=0$$
+</ol></p><p>Wat betekent dit allemaal? Wat zijn die pijltjes en dikgedrukte letters? Wat is een moment? Wat is het verschil tussen vermenigvuldigen met een puntje en vermenigvuldigen met een kruisje? Wat is virtuele arbeid? Wat zijn die grote E's met letters eronder?</p><p>Dat staat allemaal in de rest van dit document (en leggen we je graag verder uit tijdens de hoor- en werkcolleges).
+</p><p>
+<h1>Leerdoelen</h1>
 Aan het eind van dit vak zou de student het volgende moeten kunnen:
-\begin{enumerate}
-\item Het toepassen van de volgende \textbf{vectoroperaties} op wiskundige vraagstukken: optellen, aftrekken, scalair vermenigvuldigen, magnitude bepalen, normaliseren, inproduct, uitproduct, component bepalen, projecteren, onderlinge hoek bepalen; en op natuurkundige vraagstukken: arbeid bepalen gegeven een constante krachtvector en verplaatsing, momentvector bepalen gegeven een krachtvector en positievectoren, moment langs een as bepalen gegeven een momentvector en positievectoren.
-\item Een \textbf{systeem modelleren} als één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, in zowel 2D als 3D.
-\item \textbf{Vrijlichaamsdiagrammen} tekenen van één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, in zowel 2D als 3D.
-\item Evenwichtsvoorwaarden bepalen van één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, door middel van de \textbf{vectormethode}, in zowel 2D als 3D.
-\item De \textbf{resulterende kracht} bepalen van twee of meer krachten, en de \textbf{werklijn} van de resulterende kracht bepalen, in zowel 2D als 3D. In 3D alleen als alle krachten parallel lopen.
-\item De resulterende kracht en de werklijn daarvan bepalen van één of meer \textbf{verdeelde belastingen}, door middel van zowel de \textbf{superpositiemethode} als de \textbf{integratiemethode}.
-\item Evenwichtsvoorwaarden bepalen van een gegeven \textbf{vakwerk}, door middel van zowel de \textbf{knooppuntmethode} als de \textbf{snedemethode}, in zowel 2D als 3D.
-\item \textbf{Nulstaven} (zero force members) en \textbf{tweekrachtsstaven} (two force members) identificeren, en daarmee vrijlichaamsdiagrammen versimpelen.
-\item De \textbf{inwendige belasting} bepalen, namelijk normaalkracht, schuifkracht, en buigmoment, op gegeven posities van een gegeven 2D balk.
-\item \textbf{Schuifkracht- en buigmomentdiagrammen} tekenen van een gegeven 2D balk.
-\item Evenwichtsvoorwaarden bepalen van één of meer starre lichamen waarop \textbf{Coulombwrijving}, \textbf{riemwrijving}, \textbf{rolweerstand}, of een combinatie daarvan, van toepassing is.
-\item Evenwichtsvoorwaarden bepalen van mechanismen in 2D, door middel van de \textbf{virtuele arbeidmethode} en de \textbf{potentiële energiemethode}.
-\item \textbf{Stabiliteit} bepalen van een evenwichtssituatie van een mechanisme in 2D, door middel van de \textbf{potentiële energiemethode}.
-
-\item Het \textbf{geometrisch centrum} bepalen van curvesegmenten, oppervlakken, en volumes, door middel van zowel \textbf{superpositie} als de \textbf{integratiemethode}.
-\item Evenwichtsvoorwaarden bepalen van één of meer starre lichamen waarop \textbf{hydrostatische belasting} van toepassing is.
-\end{enumerate}
-
-\newpage
-\section{Vectoren}
-
-Notatie: het is gebruikelijk dat vectoren getypt dikgedrukt zijn ($\bm{r}$). Handgeschreven is het gebruikelijk om ze aan te duiden met een pijl erboven $\overrightharpoonup{r}$ (of alternatievelijk $\overbar{r}$ of $\underbar{r}$). In dit document gebruiken we zowel dikgedrukt als een halve pijl erboven ($\v{r}$). Vectoren met lengte 1 noteren we dikgedrukt met een dakje ($\u{u}$).
-
-
-Basis-eenheidsvectoren:
-$$ \i = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad \j = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \quad \k = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$$
-
-Notatie met basisvectoren:
-$$ \v{r} = \begin{pmatrix} a \\ b \\ c \end{pmatrix}=a\i+b\j+c\k, \quad \v{s} = d\i + e\j + f\k$$ 
-
-Optellen:
-$$ \v{r} + \v{s} = (a+d)\i + (b+e)\j + (c+f)\k  $$
-
-Scalair vermenigvuldigen:
-$$ g\v{r} = ga\i + gb\j + gc\k$$
-
-Aftrekken:
-$$ \v{r} - \v{s} = \v{r} + (-1)\v{s} $$
-
-Positievectoren:
-$$\r_{O B} = \r_{O A} + \r_{A B}$$
-$$\r_{A B} = \r_{O B} - \r_{O A}$$
-
-Magnitude:
-$$r = ||\v{r}|| = \sqrt{a^2+b^2+c^2}\quad\leftarrow\text{Zorg dat er altijd duidelijk onderscheid is tussen $r$ en $\v{r}$}$$
-
-Eenheidsvector (normalizeren):
-$$\u{u}_r = \frac{1}{r}\v{r}$$
-
-\section{Krachtvectoren}
-
-Algemene splitsing in grootte en richting:
-$$\v{F}=F\u{u}_F$$
-
-In 2D als je een hoek $\theta$ hebt vanaf de positieve x-as linksom:
-$$\v{F}=F(\u{i}\cos\theta +\u{j}\sin\theta)$$
-
-\section{Inproduct}
+<ol>
+<li>Het toepassen van de volgende <b>vectoroperaties</b> op wiskundige vraagstukken: optellen, aftrekken, scalair vermenigvuldigen, magnitude bepalen, normaliseren, inproduct, uitproduct, component bepalen, projecteren, onderlinge hoek bepalen; en op natuurkundige vraagstukken: arbeid bepalen gegeven een constante krachtvector en verplaatsing, momentvector bepalen gegeven een krachtvector en positievectoren, moment langs een as bepalen gegeven een momentvector en positievectoren.
+<li>Een <b>systeem modelleren</b> als één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, in zowel 2D als 3D.
+<li><b>Vrijlichaamsdiagrammen</b> tekenen van één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, in zowel 2D als 3D.
+<li>Evenwichtsvoorwaarden bepalen van één of meer puntdeeltjes of starre lichamen, of een combinatie daarvan, door middel van de <b>vectormethode</b>, in zowel 2D als 3D.
+<li>De <b>resulterende kracht</b> bepalen van twee of meer krachten, en de <b>werklijn</b> van de resulterende kracht bepalen, in zowel 2D als 3D. In 3D alleen als alle krachten parallel lopen.
+<li>De resulterende kracht en de werklijn daarvan bepalen van één of meer <b>verdeelde belastingen</b>, door middel van zowel de <b>superpositiemethode</b> als de <b>integratiemethode</b>.
+<li>Evenwichtsvoorwaarden bepalen van een gegeven <b>vakwerk</b>, door middel van zowel de <b>knooppuntmethode</b> als de <b>snedemethode</b>, in zowel 2D als 3D.
+<li><b>Nulstaven</b> (zero force members) en <b>tweekrachtsstaven</b> (two force members) identificeren, en daarmee vrijlichaamsdiagrammen versimpelen.
+<li>De <b>inwendige belasting</b> bepalen, namelijk normaalkracht, schuifkracht, en buigmoment, op gegeven posities van een gegeven 2D balk.
+<li><b>Schuifkracht- en buigmomentdiagrammen</b> tekenen van een gegeven 2D balk.
+<li>Evenwichtsvoorwaarden bepalen van één of meer starre lichamen waarop <b>Coulombwrijving</b>, <b>riemwrijving</b>, <b>rolweerstand</b>, of een combinatie daarvan, van toepassing is.
+<li>Evenwichtsvoorwaarden bepalen van mechanismen in 2D, door middel van de <b>virtuele arbeidmethode</b> en de <b>potentiële energiemethode</b>.
+<li><b>Stabiliteit</b> bepalen van een evenwichtssituatie van een mechanisme in 2D, door middel van de <b>potentiële energiemethode</b>.</p><p><li>Het <b>geometrisch centrum</b> bepalen van curvesegmenten, oppervlakken, en volumes, door middel van zowel <b>superpositie</b> als de <b>integratiemethode</b>.
+<li>Evenwichtsvoorwaarden bepalen van één of meer starre lichamen waarop <b>hydrostatische belasting</b> van toepassing is.
+</ol></p><p>
+<h1>Vectoren</h1></p><p>Notatie: het is gebruikelijk dat vectoren getypt dikgedrukt zijn ($$). Handgeschreven is het gebruikelijk om ze aan te duiden met een pijl erboven $$ (of alternatievelijk $$ of $$). In dit document gebruiken we zowel dikgedrukt als een halve pijl erboven ($$). Vectoren met lengte 1 noteren we dikgedrukt met een dakje ($$).</p><p>Basis-eenheidsvectoren:
+$$  =  1 \\ 0 \\ 0 ,   =  0 \\ 1 \\ 0 ,   =  0 \\ 0 \\ 1 $$</p><p>Notatie met basisvectoren:
+$$  =  a \\ b \\ c =a+b+c,   = d + e + f$$ </p><p>Optellen:
+$$  +  = (a+d) + (b+e) + (c+f)  $$</p><p>Scalair vermenigvuldigen:
+$$ g = ga + gb + gc$$</p><p>Aftrekken:
+$$  -  =  + (-1) $$</p><p>Positievectoren:
+$$_{O B} = _{O A} + _{A B}$$
+$$_{A B} = _{O B} - _{O A}$$</p><p>Magnitude:
+$$r = |||| = $}$$</p><p>Eenheidsvector (normalizeren):
+$$_r = {r}$$</p><p><h1>Krachtvectoren</h1></p><p>Algemene splitsing in grootte en richting:
+$$=F_F$$</p><p>In 2D als je een hoek $$ hebt vanaf de positieve x-as linksom:
+$$=F( +)$$</p><p><h1>Inproduct</h1>
 Inproduct:
-$$ \v{r} \cdot \v{s}= ad+be+cf \quad\leftarrow\text{Dit is dus een scalar!}$$
-Met een hoek $\theta$ tussen $\v{r}$ en $\v{s}$:
-$$ \v{r} \cdot \v{s}= rs\cos\theta $$
-
-Scalaire component van $\v{r}$ langs $\v{s}$:
-$$\text{comp} _s(\v{r})=\v{r}\cdot\u{u}_s\quad\leftarrow\text{Dit is dus een scalar!}$$
-
-Projectie(vector) van $\v{r}$ op $\v{s}$:
-$$\v{\text{proj}} _s(\v{r})=\text{comp} _s(\v{r})\u{u}_s\quad\leftarrow\text{Dit is dus een vector!}$$
-
-Arbeid van een constante kracht:
-$$U = \v{F}\cdot \v{\Delta r}$$
-
-Infinitesimale arbeid:
-$$dU = \v{F}\cdot\v{d r} $$
-
-Algemene arbeid (over een pad $C$):
-$$U=\int_C\v{F}\cdot\v{d r}$$
-
-\section{Vrijlichaamsdiagram}
-Een vrijlichaamsdiagram (``free body diagram'', FBD) bevat het volgende.
-
-\begin{enumerate}
-    \item Het lichaam naar keuze, en \textbf{niet} de omgeving. 
-    
-    Teken de systeemgrens zodanig dat de krachten die je wilt bepalen, op de systeemgrens werken. Bijvoorbeeld: als je de kracht wil bepalen die de grond op een wiel uitoefent, moet je systeemgrens door dat contactpunt heen lopen.
-
-    \item Alle (aangrijpings)punten waarop krachten werken.
-
-    \item Alle krachten en externe (koppel)momenten\footnote{Zie \autoref{moment}} die op het lichaam werken.
-
-    Let op: teken de krachten die de omgeving op het lichaam uitoefent (dus niet de tegenovergestelde krachten die het lichaam op de omgeving uitoefent).
-
-    Als een kracht een bekende richting heeft, teken je één kracht met een onbekende grootte, en geef je die grootte een naam (bijvoorbeeld $A_x$).
-
-    Als een kracht ook geen bekende richting hebt, moet je dus twee onbekenden hebben. Bijvoorbeeld twee krachten met bekende richtingen, loodrecht op elkaar, en met twee onbekende groottes ($A_x$ en $A_y$).\footnote{Alternatievelijk kan je ook een onbekende grootte en een onbekende richting (hoek) tekenen: $F_A$ en $\theta_A$.}
-
-    Als er op een lichaam een verdeelde belasting werkt, raad ik aan om die alvast te vervangen door een puntbelasting (met de juiste werklijn), voordat je je vrijlichaamsdiagram tekent\footnote{Zie \autoref{res}}.
-
-    \item Alle afstanden die invloed hebben op het momentevenwicht.
-
-    Bijvoorbeeld afstanden tussen krachten en afstanden vanaf het zwaartepunt.
-
-    \item Een assenstelsel.
-\end{enumerate}
-
-Een vrijlichaamsdiagram zou alle informatie moeten bevatten die je nodig hebt om een probleem op te lossen, en geen informatie die je niet nodig hebt.
-
-\section{Krachtenevenwicht puntdeeltje}
-
-\begin{enumerate}
-    \item Teken een vrijlichaamsdiagram. Dit is de belangrijkste stap.
-    \item Check of alle krachten door één punt gaan.
-    \item Check of er twee onbekenden zijn in 2D, of drie onbekenden in 3D. Voorbeeld: onbekenden $F_1, F_2, F_3$.
-    \item Voorbeeld: $F_4$ bekend. Dan:
-
-    $$ \sum\F = \v{0} = \F_1 + \F_2 + \F_3 + \F_4$$
-
-    \item Elke kracht omschrijven als een eenheidsvector keer een grootte:
-    $$\sum\F  = \u{u}_1F_1 + \u{u}_2F_2 + \u{u}_3F_3 + \u{u}_4F_4$$
-
-    \item Opdelen in componenten:
-
-    $$ (\u{u}_1\cdot\i) F_1 + (\u{u}_2\cdot\i) F_2 + (\u{u}_3\cdot\i) F_3 + (\u{u}_4\cdot\i) F_4 = 0$$
-
-    $$ (\u{u}_1\cdot\j) F_1 + (\u{u}_2\cdot\j) F_2 + (\u{u}_3\cdot\j) F_3 + (\u{u}_4\cdot\j) F_4 = 0$$
-
-    $$ (\u{u}_1\cdot\k) F_1 + (\u{u}_2\cdot\k) F_2 + (\u{u}_3\cdot\k) F_3 + (\u{u}_4\cdot\k) F_4 = 0$$
-
-    \item Dit stelsel van drie vergelijkingen en drie onbekenden oplossen (twee in 2D).
-    \item Controleer de eenheid van je (symbolische) eindantwoord(en).
-\end{enumerate}
-
-\section{Uitproduct}
+$$   = ad+be+cf $$
+Met een hoek $$ tussen $$ en $$:
+$$   = rs $$</p><p>Scalaire component van $$ langs $$:
+$$ _s()=_s$$</p><p>Projectie(vector) van $$ op $$:
+$$} _s()= _s()_s$$</p><p>Arbeid van een constante kracht:
+$$U =  $$</p><p>Infinitesimale arbeid:
+$$dU =  $$</p><p>Algemene arbeid (over een pad $C$):
+$$U=_C$$</p><p><h1>Vrijlichaamsdiagram</h1>
+Een vrijlichaamsdiagram (``free body diagram'', FBD) bevat het volgende.</p><p><ol>
+    <li>Het lichaam naar keuze, en <b>niet</b> de omgeving. </p><p>    Teken de systeemgrens zodanig dat de krachten die je wilt bepalen, op de systeemgrens werken. Bijvoorbeeld: als je de kracht wil bepalen die de grond op een wiel uitoefent, moet je systeemgrens door dat contactpunt heen lopen.</p><p>    <li>Alle (aangrijpings)punten waarop krachten werken.</p><p>    <li>Alle krachten en externe (koppel)momenten} die op het lichaam werken.</p><p>    Let op: teken de krachten die de omgeving op het lichaam uitoefent (dus niet de tegenovergestelde krachten die het lichaam op de omgeving uitoefent).</p><p>    Als een kracht een bekende richting heeft, teken je één kracht met een onbekende grootte, en geef je die grootte een naam (bijvoorbeeld $A_x$).</p><p>    Als een kracht ook geen bekende richting hebt, moet je dus twee onbekenden hebben. Bijvoorbeeld twee krachten met bekende richtingen, loodrecht op elkaar, en met twee onbekende groottes ($A_x$ en $A_y$).</p><p>    Als er op een lichaam een verdeelde belasting werkt, raad ik aan om die alvast te vervangen door een puntbelasting (met de juiste werklijn), voordat je je vrijlichaamsdiagram tekent}.</p><p>    <li>Alle afstanden die invloed hebben op het momentevenwicht.</p><p>    Bijvoorbeeld afstanden tussen krachten en afstanden vanaf het zwaartepunt.</p><p>    <li>Een assenstelsel.
+</ol></p><p>Een vrijlichaamsdiagram zou alle informatie moeten bevatten die je nodig hebt om een probleem op te lossen, en geen informatie die je niet nodig hebt.</p><p><h1>Krachtenevenwicht puntdeeltje</h1></p><p><ol>
+    <li>Teken een vrijlichaamsdiagram. Dit is de belangrijkste stap.
+    <li>Check of alle krachten door één punt gaan.
+    <li>Check of er twee onbekenden zijn in 2D, of drie onbekenden in 3D. Voorbeeld: onbekenden $F_1, F_2, F_3$.
+    <li>Voorbeeld: $F_4$ bekend. Dan:</p><p>    $$  =  = _1 + _2 + _3 + _4$$</p><p>    <li>Elke kracht omschrijven als een eenheidsvector keer een grootte:
+    $$  = _1F_1 + _2F_2 + _3F_3 + _4F_4$$</p><p>    <li>Opdelen in componenten:</p><p>    $$ (_1) F_1 + (_2) F_2 + (_3) F_3 + (_4) F_4 = 0$$</p><p>    $$ (_1) F_1 + (_2) F_2 + (_3) F_3 + (_4) F_4 = 0$$</p><p>    $$ (_1) F_1 + (_2) F_2 + (_3) F_3 + (_4) F_4 = 0$$</p><p>    <li>Dit stelsel van drie vergelijkingen en drie onbekenden oplossen (twee in 2D).
+    <li>Controleer de eenheid van je (symbolische) eindantwoord(en).
+</ol></p><p><h1>Uitproduct</h1>
 Het uitproduct is niet hetzelfde als het inproduct!
-$$ \v{r} \times \v{s}= (bf-ce)\i + (cd-af)\j+ (ae-bd)\k \quad\leftarrow\text{Dit is dus een vector!}$$
-$$\v{r} \times \v{s} = -(\v{s} \times \v{r}) \quad\leftarrow\text{Je kan een uitproduct dus niet zomaar omdraaien!}$$
-$$||\v{r}\times\v{s}||=rs\sin\theta$$
-
-Er zijn dus in totaal drie manieren om een vector te ``vermenigvuldigen'': 
-\begin{enumerate}
-    \item Scalair product: $s(a\i+b\j+c\k) = sa\i + sb\j +sc\k$
-    \item Inproduct: $(a\i+b\j+c\k)\cdot(d\i+e\j+f\k)=ad+be+cf$
-    \item Uitproduct: $(a\i+b\j+c\k)\times(d\i+e\j+f\k)=(bf-ce)\i+(cd-af)\j+(ae-bd)\k$
-\end{enumerate}
-Let op de drie verschillende notaties die we hier dus voor gebruiken.
-
-\section{Moment}
-\label{moment}
-
-\begin{enumerate} 
-
-\item Een moment is het draai-equivalent van een kracht. Een moment is een vector, want een moment heeft een grootte en een richting.
-
-\item Een momentvector loopt parallel aan de as, waaromheen dit moment een draaiing zou veroorzaken.
-
-\item De richting van een momentvector wordt bepaald met de \textbf{rechterhandregel}: als je met je rechterhand de momentvector vast zou grijpen, zodat je vingers wijzen in de richting van de draaiing, staat je duim in de richting van de pijlpunt.
-
-\item Het moment dat een kracht $\F_B$ levert om een punt $A$:
-$$\M_A = \r_{A B} \times \F_B$$
-
-\item De component van het moment dat een kracht $\F_B$ levert langs een as $CD$:
-$$M_{CD} = \text{comp}_{CD}(\M_E) = \M_E\cdot \u{u}_{C D}=(\r_{EB} \times \F_B)\cdot \u{u}_{C D}$$ 
-
-Hierbij is $E$ een willekeurig punt op de lijn $CD$, dus het kan ook $C$ of $D$ zelf zijn. Verder is $M_{CD}$ de component in de richting van $\u{u}_{CD}$. Dit is dus negatief als de draaiing in de andere richting is: als je de grootte wilt hebben, moet je dus nog de absolute waarde nemen.
-\end{enumerate}
-
-\section{Resulterende kracht}
-\label{res}
-
-\begin{enumerate}
-\item Algemeen:
+$$   = (bf-ce) + (cd-af)+ (ae-bd) $$
+$$   = -(  ) $$
+$$||||=rs$$</p><p>Er zijn dus in totaal drie manieren om een vector te ``vermenigvuldigen'': 
+<ol>
+    <li>Scalair product: $s(a+b+c) = sa + sb +sc$
+    <li>Inproduct: $(a+b+c)(d+e+f)=ad+be+cf$
+    <li>Uitproduct: $(a+b+c)(d+e+f)=(bf-ce)+(cd-af)+(ae-bd)$
+</ol>
+Let op de drie verschillende notaties die we hier dus voor gebruiken.</p><p><h1>Moment</h1>
+</p><p><ol> </p><p><li>Een moment is het draai-equivalent van een kracht. Een moment is een vector, want een moment heeft een grootte en een richting.</p><p><li>Een momentvector loopt parallel aan de as, waaromheen dit moment een draaiing zou veroorzaken.</p><p><li>De richting van een momentvector wordt bepaald met de <b>rechterhandregel</b>: als je met je rechterhand de momentvector vast zou grijpen, zodat je vingers wijzen in de richting van de draaiing, staat je duim in de richting van de pijlpunt.</p><p><li>Het moment dat een kracht $_B$ levert om een punt $A$:
+$$_A = _{A B}  _B$$</p><p><li>De component van het moment dat een kracht $_B$ levert langs een as $CD$:
+$$M_{CD} = _{CD}(_E) = _E _{C D}=(_{EB}  _B) _{C D}$$ </p><p>Hierbij is $E$ een willekeurig punt op de lijn $CD$, dus het kan ook $C$ of $D$ zelf zijn. Verder is $M_{CD}$ de component in de richting van $_{CD}$. Dit is dus negatief als de draaiing in de andere richting is: als je de grootte wilt hebben, moet je dus nog de absolute waarde nemen.
+</ol></p><p><h1>Resulterende kracht</h1>
+</p><p><ol>
+<li>Algemeen:
 Grootte en richting:
-$$\F_{res} = \F_A + \F_B$$
-
-$\F_{res}$ grijpt aan op punt $C$ als voor elk willekeurig punt $D$ geldt:
-$$\r_{D C}\times\F_{res} = \r_{D A}\times\F_A + \r_{D B}\times\F_B$$ 
-
-Er zijn oneindig veel mogelijke punten $C$, dit is namelijk de werklijn van $\F_{res}$.
-
-Voor meer krachten ($i$ is hier een sommatie-index, dus niet de eenheidsvector):
-$$\F_{res} = \sum_i\F_i$$
-
-$\F_{res}$ grijpt aan op punt $C$ als voor elk willekeurig punt $D$ geldt:
-$$\r_{D C}\times\F_{res} = \sum_i \r_{D i}\times\F_i$$ 
-
-Opnieuw: er zijn oneindig veel mogelijke punten $C$, dit is namelijk de werklijn van $\F_{res}$.
-
-\item Voor parallele krachten in 2D, elk in $y$-richting:
-$$F_{res} = F_A + F_B$$
-
-Werklijn\footnote{Hibbeler gebruik een streepje ($\bar{x}$) om een de positie van de werklijn aan te geven. Dit doen wij ook, maar let dus op: het is een streepje en geen pijl, dus het is een scalar, geen vector!} van $F_{res}$:
-$$\bar{x} = \frac{1}{F_{res}}(x_AF_A+x_BF_B)$$
-
-Voor meer parallele krachten:
-$$F_{res} = \sum_i F_i$$
-
-Werklijn van $F_{res}$:
-$$\bar{x} = \frac{1}{F_{res}}\sum_i \tilde{x}_i F_i$$
-
-\item Voor een verdeelde belasting $w(x)$ met $x_0 < x < x_1$:
+$$_{res} = _A + _B$$</p><p>$_{res}$ grijpt aan op punt $C$ als voor elk willekeurig punt $D$ geldt:
+$$_{D C}_{res} = _{D A}_A + _{D B}_B$$ </p><p>Er zijn oneindig veel mogelijke punten $C$, dit is namelijk de werklijn van $_{res}$.</p><p>Voor meer krachten ($i$ is hier een sommatie-index, dus niet de eenheidsvector):
+$$_{res} = _i_i$$</p><p>$_{res}$ grijpt aan op punt $C$ als voor elk willekeurig punt $D$ geldt:
+$$_{D C}_{res} = _i _{D i}_i$$ </p><p>Opnieuw: er zijn oneindig veel mogelijke punten $C$, dit is namelijk de werklijn van $_{res}$.</p><p><li>Voor parallele krachten in 2D, elk in $y$-richting:
+$$F_{res} = F_A + F_B$$</p><p>Werklijn$) om een de positie van de werklijn aan te geven. Dit doen wij ook, maar let dus op: het is een streepje en geen pijl, dus het is een scalar, geen vector!} van $F_{res}$:
+$$ = {F_{res}}(x_AF_A+x_BF_B)$$</p><p>Voor meer parallele krachten:
+$$F_{res} = _i F_i$$</p><p>Werklijn van $F_{res}$:
+$$ = {F_{res}}_i _i F_i$$</p><p><li>Voor een verdeelde belasting $w(x)$ met $x_0 < x < x_1$:
 $$F_{res} = \int_{x_0}^{x_1} w(x) dx$$
-$$\bar{x} = \frac{1}{F_{res}}\int_{x_0}^{x_1} xw(x)dx$$
-
-\item Voor $w(x)=ax^b$, met een constante $a$ en $b$, en $0<x<l$, geldt\footnote{Oefentip: toon dit aan.}:
-$$\bar{x} = \frac{b+1}{b+2}l$$
-
-Voor een constante $w$, dus $w(x) = w = wx^0$, geldt $b=0$ dus $\bar{x} = \frac{1}{2}l$.
-
-Voor een lineair oplopende $w(x) = w_{max}\frac{x}{l} = \frac{w_{max}}{l}x^1$ geldt $b=1$ dus $\bar{x} = \frac{2}{3}l$.
-
-\end{enumerate}
-
-\section{Evenwicht star lichaam}
-
-\begin{enumerate}
-    \item Teken een vrijlichaamsdiagram.
-    \item Check of er drie onbekenden zijn in 2D, en zes onbekenden in 3D\footnote{Er kan een onbekende minder zijn: dan heeft het systeem een vrijheidsgraad. Het komt vaak voor dat een staaf om zijn eigen as kan draaien, wat verder geen invloed heeft op het systeem. In dit geval heb je dus maar vijf onbekenden en valt er dus een vergelijking weg (die geeft geen extra informatie).}.
-    \item Voorbeeld: onbekenden $F_{Ax}, F_{Ay}, F_{Az}, M_{Ax}, M_{Ay}, M_{Az}$ op punt $A$, en bekenden 
-    
-    $\F_B,\F_C,\M_B,\M_C$, op punten $B$ en $C$.
-    \item Krachtenevenwicht opstellen:
-    $$\sum\F = \v{0} = F_{A,x}\i + F_{A,y}\j + F_{A,z}\k + \F_B + \F_C $$
-
-    \item Elke kracht omschrijven naar een eenheidsvector keer een grootte.
-
-    \item Dit opdelen in componenten zodat je drie scalaire vergelijkingen overhoudt (in 3D).
-
-    \item Momentevenwicht opstellen om een handig punt, in dit geval punt $A$:
-    $$\sum \M_A = \v{0} = \underbrace{\sum_i\M_{ext, i}}_{\text{externe momenten}} + \underbrace{\sum_{j} \r_{A,j} \times \F_j}_{\text{momenten door externe krachten}} $$
-
-    Hier zijn $i$ en $j$ weer een sommatie-indices, in dit voorbeeld:
-    $$\sum \M_A = \v{0} = M_{Ax}\i+ M_{Ay}\j +M_{Az}\k+\M_B + \M_C + \r_{A B} \times \F_B + \r_{A C} \times \F_C $$
-
-    \item Hier weer elke kracht omschrijven naar een eenheidsvector keer een grootte.
-
-    \item Uitproducten uitschrijven.
-
-    \item Resultaat weer opdelen in componenten zodat je drie extra scalaire vergelijkingen overhoudt (in 3D).
-    \item In totaal heb je dan zes scalaire vergelijkingen en zes onbekenden. Dit kan je dus oplossen.
-    \item Controleer de eenheid van je (symbolische) eindantwoord(en).
-\end{enumerate}
-
-\section{Vaste, gebonden, en vrije vectoren}
-\begin{enumerate}
-
-\item Een \textbf{vaste vector} (``fixed vector'') verliest zijn betekenis als hij getransleerd wordt. Voorbeelden: positievector van een puntdeeltje; positievector/snelheidsvector/versnellingsvector van een star lichaam; krachtvector als stabiliteit van belang is.
-
-\item Een \textbf{gebonden vector} (``sliding vector'') kan over zijn werklijn verschoven worden. Voorbeelden: krachtvector als stabiliteit niet van belang is; moment ten gevolge van kracht.
-
-\item Twee tegengestelde maar even grote krachten $F$ met onderlinge afstand $d$ kunnen vervangen worden door een extern moment met grootte $M=Fd$. Dit heet een \textbf{koppel}. Hiervan maakt de locatie en de richting van de krachten niet uit; alleen de onderlinge afstand en de richting van het resultante moment\footnote{Oefentip: toon dit aan.}. Dit betekent dat zo'n moment een \textbf{vrije vector} (``free vector'') is: alleen de richting en grootte zijn van belang; niet de locatie. Meer voorbeelden van een vrije vector: extern moment; moment ten gevolge van koppel; snelheid en versnelling van een puntdeeltje; hoekpositievector/hoeksnelheidsvector/hoekversnellingsvector van een star lichaam.
-
-\item Voor momentevenwicht\footnote{De laatste term wordt behandeld in dynamica en is nu dus nog niet belangrijk. $I$ is het draai-equivalent van massa (het `traagheidsmoment'), en $\alpha$ is het draai-equivalent van versnelling (hoekversnelling, rad/s$^2$). Deze vergelijking is dus het draai-equivalent van de derde wet van Newton.} geldt:
-
- $$\underbrace{\sum \M_G}_{\text{gebonden}} = \underbrace{\sum\M_{ext}}_{\text{vrij}} + \underbrace{\sum_{i} \r_{G i} \times \F_i}_{\text{gebonden}} = \underbrace{I_G \v{\alpha}}_{\text{gebonden}}=\v{0}$$
-
- De bovenstaande gebonden vectoren zijn gebonden aan de keus voor $G$ (welk punt je kiest om het moment omheen te bepalen). De term $I_G\v{\alpha}$ wordt overigens pas behandeld bij Dynamica, en hier is het het handigst om het zwaartepunt te kiezen, vandaar de letter $G$.
-\end{enumerate}
-
-
- \section{Meerdere vrijlichaamsdiagrammen}
-
-\begin{enumerate}
-\item Als je een systeem hebt met precies twee contactpunten, waarop alleen krachten werken (dus geen momenten), dan zijn de resultante krachten even groot en tegengesteld, en hebben ze dezelfde werklijn\footnote{Oefentip: toon dit aan.}. Dit heet een \textbf{tweekrachtsstaaf} (``two force member'').
-
-\item Een \textbf{vakwerk} bestaat enkel uit two force members. Voor een vakwerk heb je de snedemethode en de knooppuntmethode. Meestal moet je eerst het hele vakwerk als star lichaam beschouwen en de reactiekrachten bepalen, en daarna (een van) deze twee methodes toepassen.
-
-\item Gebruik hierbij de tekenafspraak dat een staaf, die op \textbf{trek} belast wordt, een \textbf{positieve} kracht levert.
-
-\item \textbf{Snedemethode} (in 2D): trek de systeemgrens door drie staven (in 2D) of zes staven (in 3D) heen. Dan heb je een star lichaam met drie onbekende (trek)krachten in de richting van de doorgesneden staven.
-
-\item \textbf{Knooppuntmethode}: elk knooppunt kan je als een puntdeeltje beschouwen, en daarvan kan je het krachtenevenwicht bepalen.
-
-\item Een \textbf{nulstaaf} (``zero force member'') kan herkend worden aan het feit dat het de enige staaf is van een knooppunt dat (een component heeft dat) in een bepaalde richting loopt.
-
-\item Een \textbf{frame of mechanisme} bestaat uit meerdere starre lichamen, maar dit zijn niet allemaal two force members. Je hebt in zo'n geval te veel onbekenden om met één vrijlichaamsdiagram uit te rekenen. Je moet dan meerdere vrijlichaamsdiagrammen tekenen, net zolang todat je even veel vergelijkingen als onbekenden hebt. Elk extra vrijlichaamsdiagram levert drie extra vergelijkingen op (in 2D).
-\end{enumerate}
-
-\section{Inwendige belasting}
-\begin{enumerate}
-\item Bij een snede door een 2D balk heb je:
-
-\begin{enumerate}
-\item Normaalkracht $N$ in de looprichting van de balk.
-\item Afschuifkracht $V$ loodrecht op de balk.
-\item Buigmoment $M$.
-\end{enumerate}
-
-\item Deze krachten kunnen bepaald worden door een vrijlichaamsdiagram te tekenen waarbij de snede onderdeel van de systeemgrens is.
-
-\item Door de locatie van de snede als variabele te nemen (bijvoorbeeld $x$) kan je een $V$-diagram en $M$-diagram genereren: $V(x)$ en $M(x)$. 
-
-\item Als je de tekenafspraak\footnote{Zie collegeslides.} gebruikt, geldt overigens:
-
-$$V(x) = \frac{d}{dx}M(x)$$
-
-\item Als er een verdeelde belasting $w(x)$ op de balk werkt (en je gebruikt de tekenafspraak), dan geldt ook:
-
-$$w(x) = \frac{d}{dx}V(x)$$
-
-\item Let op dat je vaak meerdere vrijlichaamsdiagrammen nodig hebt.
-
-\end{enumerate}
-
-\section{Virtuele arbeid}
-
-Arbeid geleverd door krachten $\F_i$ en verplaatsingen $\Delta\v{r}_i$:
-$$U = \sum_i\Delta\v{r}_i\cdot\F_i$$
-
-Arbeid geleverd door momenten $\M_i$ en rotaties $\Delta\v{\theta}_i$:
-$$U = \sum_i\Delta\v{\theta}_i\cdot\M_i$$
-
-Als een systeem in evenwicht is\footnote{Zie de laatste pagina voor een bewijs.}, geldt voor de virtuele arbeid over kleine\footnote{In document gebruiken we in plaats van $\partial$ en $\delta$ gewoon een $d$ (``abuse of notation'').} (``virtuele'') verplaatsingen $d\v{r}$ en virtuele rotaties $d\v{\theta}$ :
-$$d U = \sum_i d\v{r}_i\cdot\F_i + \sum_j d\v{\theta}_j\cdot\v{M}_j=  0$$
-
-\begin{enumerate}
-    \item Bepaal op welke aangrijpingspunten je de krachten weet en op welk aangrijpingspunt je de kracht wilt bepalen.
-    \item Vind een vrijheidsgraad waarmee deze punten bewegen. Dit is vaak een rotatie, dus vaak wordt $\theta$ gebruikt. (Het kan ook een kleine verplaatsing zijn, dan wordt vaak $s$ gebruikt.)
-    \item Vind de positievectoren $\v{r}_i$ van deze punten\footnote{Als er momenten op meerdere lichamen werken, vind dan ook de virtuele rotaties $d
-    \v{\theta}_j$.}, als functie van $\theta$. 
-    \item Vind de afgeleiden $d\v{r}_i/d\theta$. Schrijf om naar $d\v{r}_i=(...)d\theta$
-    \item Los op $dU = 0$.
-\end{enumerate}
-
-
-\section{Potenti\"ele energie}
-\begin{enumerate}
-    \item Voor een systeem waarop alleen conservatieve krachten werken, geldt: voor elke vrijheidsgraad $q$ is er evenwicht als de potenti\"ele energie $V$ daar constant is\footnote{De reden is als volgt: als op een systeem alleen conservatieve krachten werken, is de verrichte arbeid $dU$ op het systeem gelijk aan de verloren potentiële energie van het systeem $dV$. We hebben al gezien dat voor een systeem in evenwicht $dU=0$, dus $dV=0$. Dus voor elke vrijheidsgraad $q$ die invloed heeft op $V$, moet gelden $dV/dq=0$.}. Oftewel:
-
-$$\frac{d}{dq}V(q) = 0$$
-
-Net zoals bij virtuele arbeid hebben we meestal een hoek $\theta$ of een afstand $s$ als vrijheidsgraad. Maar we schrijven hier steeds $q$ om het algemeen te houden.
-
-\item Verder is dit evenwicht neutraal stabiel als ook geldt\footnote{Want $d^2V/dq^2<0$ zou betekenen: als je iets van het evenwichtspunt af gaat zitten, wordt $V$ minder. In een systeem waaarop alleen conservatieve krachten werken, is er dus potentiële energie omgezet in kinetische energie. De beweging zal dus versnellen.}:
-
-$$\frac{d^2}{dq^2}V(q) = 0$$
-
-Als de tweede afgeleide positief is, is het evenwicht stabiel; als de tweede afgeleide negatief is, is het evenwicht instabiel.
-
-\item Een mechanisme is in elke positie neutraal stabiel als er een oplossing voor $dV/dq=0$ is die onafhankelijk is van $q$. Dit wordt ook wel ``statisch balanceren'' of ``zwaartekrachtcompensatie'' genoemd.
-
-\item Voor een gewicht $mg$ en hoogte $h$ geldt:
-$$V_g = mgh + C$$
-
-Hier is $C$ een (integratie)constante, want je kan het nulpunt van zwaarte-energie (de zogenoemde ``datum'') plaatsen waar je wil. 
-
-\item Voor een veer met stijfheid $k$ en uitrekking $\Delta s$ geldt:
-$$V_k = \frac{1}{2}k(\Delta s)^2$$
-
-\item Voor een ideale veer (``zero free length spring'') geldt dat de uitrekking en de totale lengte van de veer gelijk zijn. Zo'n veer wordt vaak gebruikt bij neutraal stabiele mechanismen.
-
-\item Vaak moet je een (veer)lengte bepalen met de cosinusregel:
-
-$$a^2 = b^2 + c^2 -2bc\cos\alpha$$
-
-Deze moet je uit je hoofd kennen.
-
-\item Bij een mechanisme met meerdere vrijheidsgraden $q_1$ en $q_2$ moet je voor evenwicht hebben:
-
-$$\frac{d}{dq_1}V(q_1,q_2) = \frac{d}{dq_2}V(q_1,q_2) = 0 $$
-
-En voor een neutraal stabiel evenwicht moet je ook hebben:
-
-$$\frac{d}{dq_1}\frac{d}{dq_1} V(q_1,q_2) = \frac{d}{dq_1} \frac{d}{dq_2}V(q_1,q_2) = \frac{d}{dq_2} \frac{d}{dq_1}V(q_1,q_2) = \frac{d}{dq_2} \frac{d}{dq_2}V(q_1,q_2) = 0 $$
-
-Voor een systeem dat voor elke positie neutraal stabiel is, levert dit zesmaal dezelfde vergelijking op; alternatievelijk kan je zien dat er dezelfde oplossing is voor zowel $dV/dq_1=0$ en $dV/dq_2=0$ die onafhankelijk is van zowel $q_1$ als $q_2$.
-
-\end{enumerate}
-
-
-
-
-\section{Wrijving}
-
-\begin{enumerate}
-    \item Statische Coulombwrijving:
-$$F_W \leq \mu_s F_N$$
-
-\item Dynamische Coulombwrijving:
-$$F_W = \mu_d F_N$$
-
-\item Riemwrijving (Euler–Eytelwein):
-$$F_{1} \leq F_{2} e^{\mu_s \theta}$$
-
-\item Rolweerstand:
-$$F_W = \frac{a}{r} F_N$$
-Hier is $a$ de rolweerstandscoëfficiënt, met een lengte-eenheid, en $r$ is de radius van het wiel of de roller. 
-
-\item Je hebt dus naast je drie vergelijkingen (in 2D) een extra vergelijking. Dus moet er een extra onbekende in je vrijlichaamsdiagram(men) zijn. Vaak is deze onbekende de locatie van $F_N$: deze locatie bepaalt dan of het systeem gaat glijden of kantelen.
-\end{enumerate}
-\section{Geometrisch centrum}
-
-\begin{enumerate}
-    \item Twee volumes $V_1$ en $V_2$ met elk een geometrisch centrum\footnote{Vanaf hier gebruiken we ook tildes ($\tilde{x}$) om het geometrisch centrum aan te geven van een onderdeel; het streepje ($\bar{x}$) geeft het geometrisch centrum aan van het geheel. Dit streepje wordt in de wiskunde gebruikt om een gemiddelde aan te geven. Zowel het geometrisch centrum als de werklijn van een resultante kracht, zijn ook eigenlijk gewoon een gewogen gemiddelde, vandaar dat we deze notatie gebruiken.} $\tilde{\r}_1$ en $\tilde{\r}_2$:
+$$ = {F_{res}}_{x_0}^{x_1} xw(x)dx$$</p><p><li>Voor $w(x)=ax^b$, met een constante $a$ en $b$, en $0<x<l$, geldt:
+$$ = {b+2}l$$</p><p>Voor een constante $w$, dus $w(x) = w = wx^0$, geldt $b=0$ dus $ = {2}l$.</p><p>Voor een lineair oplopende $w(x) = w_{max}{l} = }{l}x^1$ geldt $b=1$ dus $ = {3}l$.</p><p></ol></p><p><h1>Evenwicht star lichaam</h1></p><p><ol>
+    <li>Teken een vrijlichaamsdiagram.
+    <li>Check of er drie onbekenden zijn in 2D, en zes onbekenden in 3D.
+    <li>Voorbeeld: onbekenden $F_{Ax}, F_{Ay}, F_{Az}, M_{Ax}, M_{Ay}, M_{Az}$ op punt $A$, en bekenden </p><p>    $_B,_C,_B,_C$, op punten $B$ en $C$.
+    <li>Krachtenevenwicht opstellen:
+    $$ =  = F_{A,x} + F_{A,y} + F_{A,z} + _B + _C $$</p><p>    <li>Elke kracht omschrijven naar een eenheidsvector keer een grootte.</p><p>    <li>Dit opdelen in componenten zodat je drie scalaire vergelijkingen overhoudt (in 3D).</p><p>    <li>Momentevenwicht opstellen om een handig punt, in dit geval punt $A$:
+    $$ _A =  = }_{} +  _{A,j}  _j}_{} $$</p><p>    Hier zijn $i$ en $j$ weer een sommatie-indices, in dit voorbeeld:
+    $$ _A =  = M_{Ax}+ M_{Ay} +M_{Az}+_B + _C + _{A B}  _B + _{A C}  _C $$</p><p>    <li>Hier weer elke kracht omschrijven naar een eenheidsvector keer een grootte.</p><p>    <li>Uitproducten uitschrijven.</p><p>    <li>Resultaat weer opdelen in componenten zodat je drie extra scalaire vergelijkingen overhoudt (in 3D).
+    <li>In totaal heb je dan zes scalaire vergelijkingen en zes onbekenden. Dit kan je dus oplossen.
+    <li>Controleer de eenheid van je (symbolische) eindantwoord(en).
+</ol></p><p><h1>Vaste, gebonden, en vrije vectoren</h1>
+<ol></p><p><li>Een <b>vaste vector</b> (``fixed vector'') verliest zijn betekenis als hij getransleerd wordt. Voorbeelden: positievector van een puntdeeltje; positievector/snelheidsvector/versnellingsvector van een star lichaam; krachtvector als stabiliteit van belang is.</p><p><li>Een <b>gebonden vector</b> (``sliding vector'') kan over zijn werklijn verschoven worden. Voorbeelden: krachtvector als stabiliteit niet van belang is; moment ten gevolge van kracht.</p><p><li>Twee tegengestelde maar even grote krachten $F$ met onderlinge afstand $d$ kunnen vervangen worden door een extern moment met grootte $M=Fd$. Dit heet een <b>koppel</b>. Hiervan maakt de locatie en de richting van de krachten niet uit; alleen de onderlinge afstand en de richting van het resultante moment. Dit betekent dat zo'n moment een <b>vrije vector</b> (``free vector'') is: alleen de richting en grootte zijn van belang; niet de locatie. Meer voorbeelden van een vrije vector: extern moment; moment ten gevolge van koppel; snelheid en versnelling van een puntdeeltje; hoekpositievector/hoeksnelheidsvector/hoekversnellingsvector van een star lichaam.</p><p><li>Voor momentevenwicht geldt:</p><p> $$_{} = }_{} +  _{G i}  _i}_{} = }_{}=$$</p><p> De bovenstaande gebonden vectoren zijn gebonden aan de keus voor $G$ (welk punt je kiest om het moment omheen te bepalen). De term $I_G$ wordt overigens pas behandeld bij Dynamica, en hier is het het handigst om het zwaartepunt te kiezen, vandaar de letter $G$.
+</ol></p><p> <h1>Meerdere vrijlichaamsdiagrammen</h1></p><p><ol>
+<li>Als je een systeem hebt met precies twee contactpunten, waarop alleen krachten werken (dus geen momenten), dan zijn de resultante krachten even groot en tegengesteld, en hebben ze dezelfde werklijn. Dit heet een <b>tweekrachtsstaaf</b> (``two force member'').</p><p><li>Een <b>vakwerk</b> bestaat enkel uit two force members. Voor een vakwerk heb je de snedemethode en de knooppuntmethode. Meestal moet je eerst het hele vakwerk als star lichaam beschouwen en de reactiekrachten bepalen, en daarna (een van) deze twee methodes toepassen.</p><p><li>Gebruik hierbij de tekenafspraak dat een staaf, die op <b>trek</b> belast wordt, een <b>positieve</b> kracht levert.</p><p><li><b>Snedemethode</b> (in 2D): trek de systeemgrens door drie staven (in 2D) of zes staven (in 3D) heen. Dan heb je een star lichaam met drie onbekende (trek)krachten in de richting van de doorgesneden staven.</p><p><li><b>Knooppuntmethode</b>: elk knooppunt kan je als een puntdeeltje beschouwen, en daarvan kan je het krachtenevenwicht bepalen.</p><p><li>Een <b>nulstaaf</b> (``zero force member'') kan herkend worden aan het feit dat het de enige staaf is van een knooppunt dat (een component heeft dat) in een bepaalde richting loopt.</p><p><li>Een <b>frame of mechanisme</b> bestaat uit meerdere starre lichamen, maar dit zijn niet allemaal two force members. Je hebt in zo'n geval te veel onbekenden om met één vrijlichaamsdiagram uit te rekenen. Je moet dan meerdere vrijlichaamsdiagrammen tekenen, net zolang todat je even veel vergelijkingen als onbekenden hebt. Elk extra vrijlichaamsdiagram levert drie extra vergelijkingen op (in 2D).
+</ol></p><p><h1>Inwendige belasting</h1>
+<ol>
+<li>Bij een snede door een 2D balk heb je:</p><p><ol>
+<li>Normaalkracht $N$ in de looprichting van de balk.
+<li>Afschuifkracht $V$ loodrecht op de balk.
+<li>Buigmoment $M$.
+</ol></p><p><li>Deze krachten kunnen bepaald worden door een vrijlichaamsdiagram te tekenen waarbij de snede onderdeel van de systeemgrens is.</p><p><li>Door de locatie van de snede als variabele te nemen (bijvoorbeeld $x$) kan je een $V$-diagram en $M$-diagram genereren: $V(x)$ en $M(x)$. </p><p><li>Als je de tekenafspraak gebruikt, geldt overigens:</p><p>$$V(x) = {dx}M(x)$$</p><p><li>Als er een verdeelde belasting $w(x)$ op de balk werkt (en je gebruikt de tekenafspraak), dan geldt ook:</p><p>$$w(x) = {dx}V(x)$$</p><p><li>Let op dat je vaak meerdere vrijlichaamsdiagrammen nodig hebt.</p><p></ol></p><p><h1>Virtuele arbeid</h1></p><p>Arbeid geleverd door krachten $_i$ en verplaatsingen $_i$:
+$$U = _i_i_i$$</p><p>Arbeid geleverd door momenten $_i$ en rotaties $_i$:
+$$U = _i_i_i$$</p><p>Als een systeem in evenwicht is, geldt voor de virtuele arbeid over kleine (``virtuele'') verplaatsingen $d$ en virtuele rotaties $d$ :
+$$d U = _i d_i_i + _j d_j_j=  0$$</p><p><ol>
+    <li>Bepaal op welke aangrijpingspunten je de krachten weet en op welk aangrijpingspunt je de kracht wilt bepalen.
+    <li>Vind een vrijheidsgraad waarmee deze punten bewegen. Dit is vaak een rotatie, dus vaak wordt $$ gebruikt. (Het kan ook een kleine verplaatsing zijn, dan wordt vaak $s$ gebruikt.)
+    <li>Vind de positievectoren $_i$ van deze punten{Als er momenten op meerdere lichamen werken, vind dan ook de virtuele rotaties $d
+    _j$.}, als functie van $$. 
+    <li>Vind de afgeleiden $d_i/d$. Schrijf om naar $d_i=(...)d$
+    <li>Los op $dU = 0$.
+</ol></p><p><h1>Potenti\"ele energie</h1>
+<ol>
+    <li>Voor een systeem waarop alleen conservatieve krachten werken, geldt: voor elke vrijheidsgraad $q$ is er evenwicht als de potenti\"ele energie $V$ daar constant is. Oftewel:</p><p>$${dq}V(q) = 0$$</p><p>Net zoals bij virtuele arbeid hebben we meestal een hoek $$ of een afstand $s$ als vrijheidsgraad. Maar we schrijven hier steeds $q$ om het algemeen te houden.</p><p><li>Verder is dit evenwicht neutraal stabiel als ook geldt:</p><p>$${dq^2}V(q) = 0$$</p><p>Als de tweede afgeleide positief is, is het evenwicht stabiel; als de tweede afgeleide negatief is, is het evenwicht instabiel.</p><p><li>Een mechanisme is in elke positie neutraal stabiel als er een oplossing voor $dV/dq=0$ is die onafhankelijk is van $q$. Dit wordt ook wel ``statisch balanceren'' of ``zwaartekrachtcompensatie'' genoemd.</p><p><li>Voor een gewicht $mg$ en hoogte $h$ geldt:
+$$V_g = mgh + C$$</p><p>Hier is $C$ een (integratie)constante, want je kan het nulpunt van zwaarte-energie (de zogenoemde ``datum'') plaatsen waar je wil. </p><p><li>Voor een veer met stijfheid $k$ en uitrekking $ s$ geldt:
+$$V_k = {2}k( s)^2$$</p><p><li>Voor een ideale veer (``zero free length spring'') geldt dat de uitrekking en de totale lengte van de veer gelijk zijn. Zo'n veer wordt vaak gebruikt bij neutraal stabiele mechanismen.</p><p><li>Vaak moet je een (veer)lengte bepalen met de cosinusregel:</p><p>$$a^2 = b^2 + c^2 -2bc$$</p><p>Deze moet je uit je hoofd kennen.</p><p><li>Bij een mechanisme met meerdere vrijheidsgraden $q_1$ en $q_2$ moet je voor evenwicht hebben:</p><p>$${dq_1}V(q_1,q_2) = {dq_2}V(q_1,q_2) = 0 $$</p><p>En voor een neutraal stabiel evenwicht moet je ook hebben:</p><p>$${dq_1}{dq_1} V(q_1,q_2) = {dq_1} {dq_2}V(q_1,q_2) = {dq_2} {dq_1}V(q_1,q_2) = {dq_2} {dq_2}V(q_1,q_2) = 0 $$</p><p>Voor een systeem dat voor elke positie neutraal stabiel is, levert dit zesmaal dezelfde vergelijking op; alternatievelijk kan je zien dat er dezelfde oplossing is voor zowel $dV/dq_1=0$ en $dV/dq_2=0$ die onafhankelijk is van zowel $q_1$ als $q_2$.</p><p></ol></p><p><h1>Wrijving</h1></p><p><ol>
+    <li>Statische Coulombwrijving:
+$$F_W  _s F_N$$</p><p><li>Dynamische Coulombwrijving:
+$$F_W = _d F_N$$</p><p><li>Riemwrijving (Euler–Eytelwein):
+$$F_{1}  F_{2} e^{_s }$$</p><p><li>Rolweerstand:
+$$F_W = {r} F_N$$
+Hier is $a$ de rolweerstandscoëfficiënt, met een lengte-eenheid, en $r$ is de radius van het wiel of de roller. </p><p><li>Je hebt dus naast je drie vergelijkingen (in 2D) een extra vergelijking. Dus moet er een extra onbekende in je vrijlichaamsdiagram(men) zijn. Vaak is deze onbekende de locatie van $F_N$: deze locatie bepaalt dan of het systeem gaat glijden of kantelen.
+</ol>
+<h1>Geometrisch centrum</h1></p><p><ol>
+    <li>Twee volumes $V_1$ en $V_2$ met elk een geometrisch centrum$) om het geometrisch centrum aan te geven van een onderdeel; het streepje ($$) geeft het geometrisch centrum aan van het geheel. Dit streepje wordt in de wiskunde gebruikt om een gemiddelde aan te geven. Zowel het geometrisch centrum als de werklijn van een resultante kracht, zijn ook eigenlijk gewoon een gewogen gemiddelde, vandaar dat we deze notatie gebruiken.} $_1$ en $_2$:
     $$V_{tot} = V_1 + V_2$$
-$$\bar{\r} = \frac{1}{V_{tot}}\left(\tilde{\r}_1V_1 + \tilde{\r}_2V_2\right)$$
-
-Meer volumes:
-$$V_{tot} = \sum_i V_i$$
-$$\bar{\r} = \frac{1}{V_{tot}}\sum_i \tilde{\r}_i V_i$$
-
-Dit kan je gebruiken om het geometrisch centrum te bepalen van een vorm die bestaat uit simpele onderdelen (zoals kubussen, prisma's, cilinders, en bollen). Je kan ook volumes van elkaar aftrekken, bijvoorbeeld als je een kubus hebt met een cilindrisch gat erin.
-
-\item Integreren over oneindig veel kleine volumes $dV$; oftewel het geometrisch centrum bepalen van een arbitraire vorm:
-$$V_{tot} = \int_V dV$$
-$$\bar{\r} = \frac{1}{V_{tot}}\int_V \tilde{\r} dV $$
-
-\item Als het gaat om een 2D oppervlak, dan gebruiken we $A$ en $dA$ in plaats van $V$ en $dV$. Als het gaat om een 1D lengte, dan gebruiken we $L$ en $dL$.
-
-\item Geometrisch centrum $\bar{x}\i+\bar{y}\j$ bepalen van een staaf in de vorm $y(x)$ met $x_0 < x < x_1$:
-\begin{enumerate}
-    \item Neem $$dL = \sqrt{(dx)^2+(dy)^2} = \sqrt{1+\left(\frac{dy}{dx}\right)^2} dx$$
-    \item Voor het geometrisch centrum van $dL$ geldt $\tilde{x}= x$ en $\tilde{y} = y(x)$. 
-    \item
-
-    $$L = \int_L dL = \int_{x_0}^{x_1}\sqrt{1+\left(\frac{dy}{dx}\right)^2} dx$$
-    \item
-    
-$$\bar{x} = \frac{1}{L}\int_L \tilde{x} dL = \frac{1}{L}\int_{x_0}^{x_1} x \sqrt{1+\left(\frac{dy}{dx}\right)^2} dx$$
-
-$$\bar{y} = \frac{1}{L}\int_L \tilde{y} dL = \frac{1}{L}\int_{x_0}^{x_1} y(x) \sqrt{1+\left(\frac{dy}{dx}\right)^2} dx$$
-\end{enumerate}
-
-\item Geometrisch centrum $\bar{x}\i+\bar{y}\j$ bepalen van een oppervlak ingesloten onder een functie $y(x)$ met $x_0 < x < x_1$:
-
-\begin{enumerate}
-    \item Neem $dA = y(x) dx$.
-    \item Voor het geometrisch centrum van $dA$ geldt $\tilde{x}= x$ en $\tilde{y}= y(x)/2$.
-    \item
-
-   $$ A = \int_{x_0}^{x_1} y(x) dx$$
-
-    \item 
-
-$$\bar{x} = \frac{1}{A}\int_A \tilde{x} dA = \frac{1}{A}\int_{x_0}^{x_1} xy(x)dx$$
-
-$$\bar{y} = \frac{1}{A}\int_A \tilde{y} dA = \frac{1}{A}\int_{x_0}^{x_1} \frac{y(x)}{2}\cdot y(x)dx = \frac{1}{2A}\int_{x_0}^{x_1} y^2(x)dx$$
-
-\end{enumerate}
-
-\item Je kan ook integreren over $dy$ in plaats van $dx$, soms is dat makkelijker.
-
-
-
-\item Bij een cirkel moet je integreren over $d\theta$ in plaats van $dx$. Als de oorsprong in het midden van de cirkel ligt, kan je gebruiken: 
-
-$$x = r\cos\theta$$
-$$y = r\sin\theta$$
-
-Dan, voor alleen de rand van de cirkel:
-$$dL = r d\theta,\quad \tilde{x}=r\cos\theta,\quad \tilde{y}=r\sin\theta$$
-
-Voor het oppervlak van een cirkel (dit kan je vinden door elk partje als een driehoek te benaderen):
-$$dA = \frac{r^2}{2} d\theta,\quad \tilde{x}=\frac{2}{3}r\cos\theta,\quad \tilde{y}=\frac{2}{3}r\sin\theta$$
-
-\item Geometrisch centrum $\bar{x}\i+\bar{y}\j+\bar{z}\k$ bepalen van een oppervlak ingesloten onder een functie $z(x, y)$ met $x_0 < x < x_1$ en $y_0 < y < y_1$:
-
-\begin{enumerate}
-    \item Neem $$dV = z(x, y) dx dy$$
-    \item Voor het geometrisch centrum van $dA$ geldt $\tilde{x}= x$, $\tilde{y}= y$, en $\tilde{z}= z(x,y)/2$.
-    \item $$V = \iint_V dV = \int_{y_0}^{y_1}\int_{x_0}^{x_1}z(x, y) dx dy$$
-
-    \item $$\bar{x} = \frac{1}{V}\iint_V \tilde{x}dV = \frac{1}{V} \int_{y_0}^{y_1}\int_{x_0}^{x_1}xz(x, y) dx dy$$
-$$\bar{y} = \frac{1}{V}\iint_V \tilde{y}dV = \frac{1}{V} \int_{y_0}^{y_1}\int_{x_0}^{x_1}yz(x, y) dx dy$$
-$$\bar{z} = \frac{1}{V}\iint_V \tilde{z}dV = \frac{1}{V} \int_{y_0}^{y_1}\int_{x_0}^{x_1}\frac{z(x, y)}{2}\cdot z(x, y) dx dy = \frac{1}{2V} \int_{y_0}^{y_1}\int_{x_0}^{x_1} z^2(x, y) dx dy $$
-\end{enumerate}
-
-\end{enumerate}
-
-\section{Hydrostatica}
-
-
-\begin{enumerate}
-    \item De druk $p$ die een vloeistof uitoefent op zijn omgeving is afhankelijk van de dichtheid $\rho$, de zwaartekrachtsversnelling $g$, en de lokale(!) diepte $h$.
-
-$$p(h) = \underbrace{\rho g h}_{\text{geeft N/m}^2}$$
-
-\item Vaak is het handig om een deel van het water mee te nemen in de systeemgrens. Dan is het gewicht van het water afhankelijk van het getekende oppervlak dat water voorstelt $A_{water}$. Dit geeft een verdeelde belasting, omdat je nu de zwaartekracht neemt per eenheid lengte loodrecht op het vlak van de tekening.
-
-$$w_{g,water} = \underbrace{A_{water}\rho g}_{\text{geeft N/m}}$$
-
-\item Alternatievelijk kan in 3D een lengte $b$ loodrecht op het vlak van de tekening gebruikt worden, dan geldt:
-
-$$w(h) = \underbrace{\rho g h b}_{\text{geeft N/m}}$$
-
-$$F_{g,water} = \underbrace{V_{water}\rho g = A_{water}b\rho g}_{\text{geeft N}}$$
-
-\end{enumerate}
-
-\section*{Andere samenvattingen}
-Disclaimer: de auteur is niet inhoudelijk verantwoordelijk voor deze vakken. Deze teksten kunnen dus fouten bevatten, en aan deze teksten kunnen geen rechten worden ontleend.
-
-\begin{itemize}
-    \item Sterkteleer, \url{https://www.overleaf.com/read/qqmjnhhxczyp#dbaca1}
-    \item Dynamica, \url{https://www.overleaf.com/read/gprmxxxnqtzf#83f127}
-\end{itemize}
-
-\newpage
-
-\section*{Extra: bewijs virtuele arbeid voor meerdere starre lichamen}
-\begin{enumerate}
-    \item Neem starre lichamen $i=1, 2,...$ en op elk lichaam werken externe krachten $j=1, 2, ...$ en externe momenten $k=1, 2,...$
-    \item Dan is de totale virtuele arbeid:
-    $$dU = \sum_i\left( \sum_j\left( \F_{i,j} \cdot d\r_{i, j}\right) + \sum_k\left(\M_{i, k}\cdot d\v{\theta}_i\right)\right)$$
-    \item Links: de verplaatsing van een elk punt $d\r_{i, j}$ is gelijk aan de verplaatsing van een referentiepunt op dat lichaam $d\r_{O_i}$ plus een rotatieterm $d\v{\theta}_i \times \r_{O_i, j}$. Rechts: inproduct is distributief over optellen en alleen de $\M$-term is afhankelijk van $k$.
-    $$dU = \sum_i\left( \sum_j\left( \F_{i,j} \cdot \left(d\r_{O_i} + d\v{\theta}_i \times \r_{O_i, j}\right)\right) +  \sum_k\M_{i, k}\cdot d\v{\theta}_i \right)$$
-    \item Links: inproduct is distributief over optellen. Rechts: inproduct is commutatief. 
-    $$dU = \sum_i\left( \sum_j\left( \F_{i,j} \cdot d\r_{O_i}\right) + \sum_j\left(\F_{i,j}\cdot \left( d\v{\theta}_i \times \r_{O_i, j}\right)\right) +  d\v{\theta}_i \cdot \sum_k\M_{i, k}\right)$$
-    \item Links: inproduct is distributief over optellen en alleen de $\F$ term is afhankelijk van $j$. Midden: gebruik $\v{a} \cdot (\v{b} \times \v{c}) = \v{b} \cdot (\v{c} \times \v{a})$.
-    $$dU = \sum_i\left( \sum_j\F_{i,j} \cdot d\r_{O_i} + \sum_j\left( d\v{\theta}_i\cdot \left(\r_{O_i, j} \times \F_{i,j}\right)\right)+ d\v{\theta}_i \cdot \sum_k\M_{i, k}\right)$$
-    \item Links: $\sum_j\F_{i,j}$ is de som van krachten op één lichaam, dus gelijk aan $\v{0}$. Midden: inproduct is distributief over optellen, en $d\v{\theta}_i$ is onafhankelijk van $\j$.
-    $$dU = \sum_i\left( \v{0} \cdot d\r_{O_i} +  d\v{\theta}_i\cdot \sum_j\left(\r_{O_i, j} \times \F_{i,j}\right)+ d\v{\theta}_i \cdot \sum_k\M_{i, k}\right)$$
-    \item Links: inproduct geeft 0. Rechts: inproduct is distributief over optellen.
-    $$dU = \sum_i\left( 0 +  d\v{\theta}_i\cdot \left(\sum_j\left(\r_{O_i, j} \times \F_{i,j}\right)+  \sum_k\M_{i, k}\right)\right)$$
-    \item Rechterterm is de som van momenten op één lichaam, en dat is gelijk aan $\v{0}$.
-    $$dU = \sum_i\left(  d\v{\theta}_i\cdot \v{0}\right) = \sum_i 0 = 0$$
-\end{enumerate}
-
-\section*{Interne richtlijnen tentaminering}
-\begin{enumerate}
-    \item De tentaminering bestaat uit een Tussentoets $TT$, een Tentamen $T$ met een Tentamen Extra Opgave $TEO$, een Hertentamen $H$ met een Hentamen Extra Opgave $HEO$, en een eventuele Bonusregeling $B$.
-    
-    \item Het eindcijfer $C$ wordt als volgt berekend.
-    $$C = \min\left(\frac{1}{10}\max(TT, TEO, HEO) + \frac{9}{10}\max(T, H) + B, 10\right)$$
-
-    \item Deelcijfers worden tussendoor afgerond op 0.1, volgens de TU-richtlijnen.
-
-    \item Let op: deelcijfers tellen alleen mee als je een 5.0 of hoger haalt. Anders tellen ze door in de berekening als 0.
-
-    \item Deelcijfers worden als volgt berekend.
-
-    $$\frac{\text{behaalde punten}}{(\text{maximaal te behalen punten}) - (\text{eventuele normering})}\cdot9+1$$
-
-    \item TT bevat in principe vier vragen: 
-    \begin{enumerate}
-        \item Leerdoel 1 (vectoren)
-        \item Leerdoelen 2, 3 en/of 4 (evenwicht in 2D, inclusief systeemvorming en diagram tekenen)
-        \item Leerdoelen 2, 3 en/of 4 (evenwicht in 3D, inclusief systeemvorming en diagram tekenen)
-        \item Leerdoelen 5 en/of 6 (resulterende kracht en werklijn)
-    \end{enumerate}
-
-    \item T en H bevatten in principe zes vragen:
-    \begin{enumerate}
-        \item Leerdoel 1 (vectoren)
-        \item Leerdoelen 2, 3, 4, 7, en/of 8 (vakwerken, frames, en/of machines)
-        \item Leerdoelen 9 en/of 10 (inwendige belasting en/of V- en M-lijn)
-        \item Leerdoelen 11 en/of 12 (virtuele arbeid en/of potentiële energie)
-        \item Leerdoelen 2, 3, 4, en/of 14 (wrijving)
-        \item Leerdoelen 13 en/of 15 (geometrisch centrum en/of hydrostatica)
-    \end{enumerate}
-    
-    Elk leerdoel, en elke denk- en rekenstap binnen elke methode, wordt niet meer dan éénmaal getoetst, tenzij het Tussentoetsstof is (Leerdoelen 1 t/m 6).
-
-    \item Het aantal te behalen punten wordt gegeven per deelvraag.
-
-    \item Deelvragen zijn onafhankelijk van elkaar. Binnen één deelvraag kan om meerdere resultaten gevraagd worden, die wel afhankelijk van elkaar zijn. Elk gevraagd resultaat is dikgedrukt.
-
-    \item TEO en HEO bestaan elk uit één vraag uit TT.
-
-    \item TT heeft in principe 27 maximaal te behalen punten. T en H hebben elk 36 maximaal te behalen punten. TEO en HEO hebben elk 9 maximaal te behalen punten. Dit is een cijferresolutie van 1/3, 1/4, respectievelijk 1.
-
-    \item Elk punt is één denk- of rekenstap. Voor elke gemaakte denk- of rekenfout kan een student maximaal één punt verliezen. In andere woorden: er wordt rekening gehouden met doorrekenfouten. Dit geldt niet, als een fout de uitwerking zodanig versimpeld, dat aan andere denk- of rekenstappen niet meer toegekomen wordt.
-
-    \item De normering bestaat uitsluitend uit het aantal punten, waarbij niet aan de richtlijnen is voldaan, voornamelijk betreft leerdoelen, deelvragen, punten, en denk- en rekenstappen. Als een normering wordt toegepast, is dat niet om een bepaald slagingspercentage te behalen.
-
-    \item De normering en de onderbouwing worden gepubliceerd als Announcement en als errata bij Oude Tentamens.
-    
-\end{enumerate}
-
-\newpage
-
-\end{document}
+$$ = {V_{tot}}(_1V_1 + _2V_2)$$</p><p>Meer volumes:
+$$V_{tot} = _i V_i$$
+$$ = {V_{tot}}_i _i V_i$$</p><p>Dit kan je gebruiken om het geometrisch centrum te bepalen van een vorm die bestaat uit simpele onderdelen (zoals kubussen, prisma's, cilinders, en bollen). Je kan ook volumes van elkaar aftrekken, bijvoorbeeld als je een kubus hebt met een cilindrisch gat erin.</p><p><li>Integreren over oneindig veel kleine volumes $dV$; oftewel het geometrisch centrum bepalen van een arbitraire vorm:
+$$V_{tot} = _V dV$$
+$$ = {V_{tot}}_V  dV $$</p><p><li>Als het gaat om een 2D oppervlak, dan gebruiken we $A$ en $dA$ in plaats van $V$ en $dV$. Als het gaat om een 1D lengte, dan gebruiken we $L$ en $dL$.</p><p><li>Geometrisch centrum $+$ bepalen van een staaf in de vorm $y(x)$ met $x_0 < x < x_1$:
+<ol>
+    <li>Neem $$dL =  = {dx})^2} dx$$
+    <li>Voor het geometrisch centrum van $dL$ geldt $= x$ en $ = y(x)$. 
+    </p><p>    $$L = _L dL = _{x_0}^{x_1}{dx})^2} dx$$
+    </p><p>$$ = {L}_L  dL = {L}_{x_0}^{x_1} x {dx})^2} dx$$</p><p>$$ = {L}_L  dL = {L}_{x_0}^{x_1} y(x) {dx})^2} dx$$
+</ol></p><p><li>Geometrisch centrum $+$ bepalen van een oppervlak ingesloten onder een functie $y(x)$ met $x_0 < x < x_1$:</p><p><ol>
+    <li>Neem $dA = y(x) dx$.
+    <li>Voor het geometrisch centrum van $dA$ geldt $= x$ en $= y(x)/2$.
+    </p><p>   $$ A = _{x_0}^{x_1} y(x) dx$$</p><p>    <li></p><p>$$ = {A}_A  dA = {A}_{x_0}^{x_1} xy(x)dx$$</p><p>$$ = {A}_A  dA = {A}_{x_0}^{x_1} {2} y(x)dx = {2A}_{x_0}^{x_1} y^2(x)dx$$</p><p></ol></p><p><li>Je kan ook integreren over $dy$ in plaats van $dx$, soms is dat makkelijker.</p><p><li>Bij een cirkel moet je integreren over $d$ in plaats van $dx$. Als de oorsprong in het midden van de cirkel ligt, kan je gebruiken: </p><p>$$x = r$$
+$$y = r$$</p><p>Dan, voor alleen de rand van de cirkel:
+$$dL = r d, =r, =r$$</p><p>Voor het oppervlak van een cirkel (dit kan je vinden door elk partje als een driehoek te benaderen):
+$$dA = {2} d, ={3}r, ={3}r$$</p><p><li>Geometrisch centrum $++$ bepalen van een oppervlak ingesloten onder een functie $z(x, y)$ met $x_0 < x < x_1$ en $y_0 < y < y_1$:</p><p><ol>
+    <li>Neem $$dV = z(x, y) dx dy$$
+    <li>Voor het geometrisch centrum van $dA$ geldt $= x$, $= y$, en $= z(x,y)/2$.
+    <li>$$V = _V dV = _{y_0}^{y_1}_{x_0}^{x_1}z(x, y) dx dy$$</p><p>    <li>$$ = {V}_V dV = {V} _{y_0}^{y_1}_{x_0}^{x_1}xz(x, y) dx dy$$
+$$ = {V}_V dV = {V} _{y_0}^{y_1}_{x_0}^{x_1}yz(x, y) dx dy$$
+$$ = {V}_V dV = {V} _{y_0}^{y_1}_{x_0}^{x_1}{2} z(x, y) dx dy = {2V} _{y_0}^{y_1}_{x_0}^{x_1} z^2(x, y) dx dy $$
+</ol></p><p></ol></p><p><h1>Hydrostatica</h1></p><p><ol>
+    <li>De druk $p$ die een vloeistof uitoefent op zijn omgeving is afhankelijk van de dichtheid $$, de zwaartekrachtsversnelling $g$, en de lokale(!) diepte $h$.</p><p>$$p(h) = _{^2}$$</p><p><li>Vaak is het handig om een deel van het water mee te nemen in de systeemgrens. Dan is het gewicht van het water afhankelijk van het getekende oppervlak dat water voorstelt $A_{water}$. Dit geeft een verdeelde belasting, omdat je nu de zwaartekracht neemt per eenheid lengte loodrecht op het vlak van de tekening.</p><p>$$w_{g,water} =  g}_{}$$</p><p><li>Alternatievelijk kan in 3D een lengte $b$ loodrecht op het vlak van de tekening gebruikt worden, dan geldt:</p><p>$$w(h) = _{}$$</p><p>$$F_{g,water} =  g = A_{water}b g}_{}$$</p><p></ol></p><p>*{Andere samenvattingen}
+Disclaimer: de auteur is niet inhoudelijk verantwoordelijk voor deze vakken. Deze teksten kunnen dus fouten bevatten, en aan deze teksten kunnen geen rechten worden ontleend.</p><p><ul>
+    <li>Sterkteleer, 
+    <li>Dynamica, 
+</ul></p><p></p><p>*{Extra: bewijs virtuele arbeid voor meerdere starre lichamen}
+<ol>
+    <li>Neem starre lichamen $i=1, 2,...$ en op elk lichaam werken externe krachten $j=1, 2, ...$ en externe momenten $k=1, 2,...$
+    <li>Dan is de totale virtuele arbeid:
+    $$dU = _i( _j( _{i,j}  d_{i, j}) + _k(_{i, k} d_i))$$
+    <li>Links: de verplaatsing van een elk punt $d_{i, j}$ is gelijk aan de verplaatsing van een referentiepunt op dat lichaam $d_{O_i}$ plus een rotatieterm $d_i  _{O_i, j}$. Rechts: inproduct is distributief over optellen en alleen de $$-term is afhankelijk van $k$.
+    $$dU = _i( _j( _{i,j}  (d_{O_i} + d_i  _{O_i, j})) +  _k_{i, k} d_i )$$
+    <li>Links: inproduct is distributief over optellen. Rechts: inproduct is commutatief. 
+    $$dU = _i( _j( _{i,j}  d_{O_i}) + _j(_{i,j} ( d_i  _{O_i, j})) +  d_i  _k_{i, k})$$
+    <li>Links: inproduct is distributief over optellen en alleen de $$ term is afhankelijk van $j$. Midden: gebruik $  (  ) =   (  )$.
+    $$dU = _i( _j_{i,j}  d_{O_i} + _j( d_i (_{O_i, j}  _{i,j}))+ d_i  _k_{i, k})$$
+    <li>Links: $_j_{i,j}$ is de som van krachten op één lichaam, dus gelijk aan $$. Midden: inproduct is distributief over optellen, en $d_i$ is onafhankelijk van $$.
+    $$dU = _i(   d_{O_i} +  d_i _j(_{O_i, j}  _{i,j})+ d_i  _k_{i, k})$$
+    <li>Links: inproduct geeft 0. Rechts: inproduct is distributief over optellen.
+    $$dU = _i( 0 +  d_i (_j(_{O_i, j}  _{i,j})+  _k_{i, k}))$$
+    <li>Rechterterm is de som van momenten op één lichaam, en dat is gelijk aan $$.
+    $$dU = _i(  d_i ) = _i 0 = 0$$
+</ol></p><p>*{Interne richtlijnen tentaminering}
+<ol>
+    <li>De tentaminering bestaat uit een Tussentoets $TT$, een Tentamen $T$ met een Tentamen Extra Opgave $TEO$, een Hertentamen $H$ met een Hentamen Extra Opgave $HEO$, en een eventuele Bonusregeling $B$.</p><p>    <li>Het eindcijfer $C$ wordt als volgt berekend.
+    $$C = ({10}(TT, TEO, HEO) + {10}(T, H) + B, 10)$$</p><p>    <li>Deelcijfers worden tussendoor afgerond op 0.1, volgens de TU-richtlijnen.</p><p>    <li>Let op: deelcijfers tellen alleen mee als je een 5.0 of hoger haalt. Anders tellen ze door in de berekening als 0.</p><p>    <li>Deelcijfers worden als volgt berekend.</p><p>    $$}{() - ()}9+1$$</p><p>    <li>TT bevat in principe vier vragen: 
+    <ol>
+        <li>Leerdoel 1 (vectoren)
+        <li>Leerdoelen 2, 3 en/of 4 (evenwicht in 2D, inclusief systeemvorming en diagram tekenen)
+        <li>Leerdoelen 2, 3 en/of 4 (evenwicht in 3D, inclusief systeemvorming en diagram tekenen)
+        <li>Leerdoelen 5 en/of 6 (resulterende kracht en werklijn)
+    </ol></p><p>    <li>T en H bevatten in principe zes vragen:
+    <ol>
+        <li>Leerdoel 1 (vectoren)
+        <li>Leerdoelen 2, 3, 4, 7, en/of 8 (vakwerken, frames, en/of machines)
+        <li>Leerdoelen 9 en/of 10 (inwendige belasting en/of V- en M-lijn)
+        <li>Leerdoelen 11 en/of 12 (virtuele arbeid en/of potentiële energie)
+        <li>Leerdoelen 2, 3, 4, en/of 14 (wrijving)
+        <li>Leerdoelen 13 en/of 15 (geometrisch centrum en/of hydrostatica)
+    </ol></p><p>    Elk leerdoel, en elke denk- en rekenstap binnen elke methode, wordt niet meer dan éénmaal getoetst, tenzij het Tussentoetsstof is (Leerdoelen 1 t/m 6).</p><p>    <li>Het aantal te behalen punten wordt gegeven per deelvraag.</p><p>    <li>Deelvragen zijn onafhankelijk van elkaar. Binnen één deelvraag kan om meerdere resultaten gevraagd worden, die wel afhankelijk van elkaar zijn. Elk gevraagd resultaat is dikgedrukt.</p><p>    <li>TEO en HEO bestaan elk uit één vraag uit TT.</p><p>    <li>TT heeft in principe 27 maximaal te behalen punten. T en H hebben elk 36 maximaal te behalen punten. TEO en HEO hebben elk 9 maximaal te behalen punten. Dit is een cijferresolutie van 1/3, 1/4, respectievelijk 1.</p><p>    <li>Elk punt is één denk- of rekenstap. Voor elke gemaakte denk- of rekenfout kan een student maximaal één punt verliezen. In andere woorden: er wordt rekening gehouden met doorrekenfouten. Dit geldt niet, als een fout de uitwerking zodanig versimpeld, dat aan andere denk- of rekenstappen niet meer toegekomen wordt.</p><p>    <li>De normering bestaat uitsluitend uit het aantal punten, waarbij niet aan de richtlijnen is voldaan, voornamelijk betreft leerdoelen, deelvragen, punten, en denk- en rekenstappen. Als een normering wordt toegepast, is dat niet om een bepaald slagingspercentage te behalen.</p><p>    <li>De normering en de onderbouwing worden gepubliceerd als Announcement en als errata bij Oude Tentamens.</p><p></ol></p><p></p><p>
+</p>
 
 </body>
 </html>
